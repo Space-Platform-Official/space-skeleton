@@ -1,5 +1,6 @@
-#!/usr/bin/env php
 <?php
+
+declare(strict_types=1);
 /**
  * Copyright (C) SPACE Platform PTY LTD - All Rights Reserved
  * Unauthorized copying of this file, via any medium is strictly prohibited
@@ -9,10 +10,9 @@
  */
 ini_set('display_errors', 'on');
 ini_set('display_startup_errors', 'on');
-ini_set('memory_limit', '1G');
+ini_set('memory_limit', '1');
 
 error_reporting(E_ALL);
-
 date_default_timezone_set('Australia/Brisbane');
 
 ! defined('BASE_PATH') && define('BASE_PATH', dirname(__DIR__, 1));
@@ -28,6 +28,5 @@ if (file_exists(BASE_PATH . '/bin/bootstrap.php')) {
     /** @var Psr\Container\ContainerInterface $container */
     $container = require BASE_PATH . '/config/container.php';
 
-    $application = $container->get(\Hyperf\Contract\ApplicationInterface::class);
-    $application->run();
+    $container->get(Hyperf\Contract\ApplicationInterface::class);
 })();

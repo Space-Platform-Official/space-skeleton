@@ -2,20 +2,18 @@
 
 declare(strict_types=1);
 /**
- * This file is part of Hyperf.
- *
- * @link     https://www.hyperf.io
- * @document https://hyperf.wiki
- * @contact  group@hyperf.io
- * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ * Copyright (C) SPACE Platform PTY LTD - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Nash Gao <nash@spaceplaform.co>.
+ * @organization Space Platform
  */
 $header = <<<'EOF'
-This file is part of Hyperf.
-
-@link     https://www.hyperf.io
-@document https://hyperf.wiki
-@contact  group@hyperf.io
-@license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+Copyright (C) SPACE Platform PTY LTD - All Rights Reserved
+Unauthorized copying of this file, via any medium is strictly prohibited
+Proprietary and confidential
+Written by Nash Gao <nash@spaceplaform.co>.
+@organization Space Platform
 EOF;
 
 return (new PhpCsFixer\Config())
@@ -39,11 +37,6 @@ return (new PhpCsFixer\Config())
         ],
         'concat_space' => [
             'spacing' => 'one',
-        ],
-        'global_namespace_import' => [
-            'import_classes' => true,
-            'import_constants' => true,
-            'import_functions' => null,
         ],
         'blank_line_before_statement' => [
             'statements' => [
@@ -88,19 +81,37 @@ return (new PhpCsFixer\Config())
         'no_unused_imports' => true,
         'not_operator_with_successor_space' => true,
         'not_operator_with_space' => false,
-        'ordered_class_elements' => true,
+        'ordered_class_elements' => [
+            'order' => [
+                'use_trait',
+                'constant_public',
+                'constant',
+                'property_static',
+                'property_public',
+                'property',
+                'construct',
+                'method_public_abstract',
+                'method_public',
+                'method_protected_abstract',
+                'method_protected',
+                'method_private',
+                'magic',
+                'destruct',
+            ],
+            'sort_algorithm' => 'alpha',
+        ],
         'php_unit_strict' => false,
         'phpdoc_separation' => false,
         'single_quote' => true,
         'standardize_not_equals' => true,
         'multiline_comment_opening_closing' => true,
-        'single_line_empty_body' => false,
     ])
     ->setFinder(
         PhpCsFixer\Finder::create()
             ->exclude('public')
             ->exclude('runtime')
             ->exclude('vendor')
+            ->exclude('test/Cases/Unit/Actor/AbstractActorTest')
             ->in(__DIR__)
     )
     ->setUsingCache(false);

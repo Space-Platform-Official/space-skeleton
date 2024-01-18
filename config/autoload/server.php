@@ -2,12 +2,11 @@
 
 declare(strict_types=1);
 /**
- * This file is part of Hyperf.
- *
- * @link     https://www.hyperf.io
- * @document https://hyperf.wiki
- * @contact  group@hyperf.io
- * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ * Copyright (C) SPACE Platform PTY LTD - All Rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ * Written by Nash Gao <nash@spaceplaform.co>.
+ * @organization Space Platform
  */
 use Hyperf\Server\Event;
 use Hyperf\Server\Server;
