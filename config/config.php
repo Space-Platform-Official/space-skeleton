@@ -10,12 +10,14 @@ declare(strict_types=1);
  */
 use Hyperf\Contract\StdoutLoggerInterface;
 use Psr\Log\LogLevel;
+use SpacePlatform\Utils\Flag\Native\EnvFlagEnum;
+use SpacePlatform\Utils\Macro\Macro;
 
 use function Hyperf\Support\env;
 
 return [
-    'app_name' => env('APP_NAME', 'skeleton'),
-    'app_env' => env('APP_ENV', 'dev'),
+    'app_name' => env('APP_NAME', SERVER_NAME),
+    'app_env' => env('APP_ENV', Macro::call('env')?->getValue() ?? EnvFlagEnum::DEVELOPMENT),
     'scan_cacheable' => env('SCAN_CACHEABLE', false),
     StdoutLoggerInterface::class => [
         'log_level' => [

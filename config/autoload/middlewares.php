@@ -9,6 +9,6 @@ declare(strict_types=1);
  * @organization Space Platform
  */
 return [
-    'http' => [
+    SERVER_NAME => [
     ],
 ];

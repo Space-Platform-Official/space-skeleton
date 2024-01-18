@@ -16,7 +16,7 @@ return [
     'mode' => SWOOLE_PROCESS,
     'servers' => [
         [
-            'name' => 'http',
+            'name' => SERVER_NAME,
             'type' => Server::SERVER_HTTP,
             'host' => '0.0.0.0',
             'port' => 9501,
