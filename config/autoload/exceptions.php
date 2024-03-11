@@ -10,7 +10,8 @@ declare(strict_types=1);
  */
 return [
     'handler' => [
-        'http' => [
+        SERVER_NAME => [
+            Hyperf\Validation\ValidationExceptionHandler::class,
             Hyperf\HttpServer\Exception\Handler\HttpExceptionHandler::class,
         ],
     ],

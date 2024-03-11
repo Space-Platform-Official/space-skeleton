@@ -10,5 +10,6 @@ declare(strict_types=1);
  */
 return [
     SERVER_NAME => [
+        Hyperf\Validation\Middleware\ValidationMiddleware::class
     ],
 ];
